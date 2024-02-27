@@ -6,6 +6,7 @@
 
     <!-- BMI categories -->
     <string-array name="bmi_categories">
+        <item>Undefined</item>
         <item>Underweight</item>
         <item>Normal weight</item>
         <item>Overweight</item>

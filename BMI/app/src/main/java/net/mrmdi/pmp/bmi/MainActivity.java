@@ -2,6 +2,7 @@ package net.mrmdi.pmp.bmi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.ViewGroup;
@@ -47,69 +48,15 @@ public class MainActivity extends AppCompatActivity {
                         .show();
                 return;
             }
-//            int weight = Integer.parseInt(((EditText) findViewById(R.id.editTextWeight)).getText().toString());
-//            int height = Integer.parseInt(((EditText) findViewById(R.id.editTextHeight)).getText().toString());
 
-            // calculate BMI
-            float heightInMeters = (float) height / 100;
-            double bmi = 0.0;
-            try {
-                bmi = (double) weight / (heightInMeters * heightInMeters);
-            } catch (ArithmeticException e) {
-                // display error in popup
-                new android.app.AlertDialog.Builder(this)
-                        .setTitle("Error")
-                        .setMessage("Please enter valid weight and height")
-                        .setPositiveButton("OK", null)
-                        .show();
-                return;
-            }
+            // display ResultActivity using intent
 
-            // if bmi is not zero, display chart
-            if (bmi != 0.0) {
-                // display BMI in popup
-                new android.app.AlertDialog.Builder(this)
-                        .setTitle("BMI")
-                        .setMessage("Your BMI is " + bmi)
-                        .setPositiveButton("OK", null)
-                        .show();
+            // Intent is a messaging object you can use to request an action from another app component.
 
-// Format the BMI value to 2 decimal places
-                String bmiText = String.format(Locale.US, "%.2f", bmi);
-
-// Determine the BMI category and corresponding color
-                String category;
-                int color;
-                if (bmi < 18.5) {
-                    category = "Underweight";
-                    color = Color.BLUE;
-                } else if (bmi <= 24.9) {
-                    category = "Normal";
-                    color = Color.GREEN;
-                } else if (bmi <= 29.9) {
-                    category = "Overweight";
-                    color = Color.rgb(255, 165, 0); // Orange
-                } else if (bmi < 40) {
-                    category = "Obesity";
-                    color = Color.RED;
-                } else {
-                    category = "Class 3 Obesity";
-                    color = Color.rgb(139, 0, 0); // Dark red
-                }
-
-// Get references to the TextViews
-                TextView textViewBMIResult = findViewById(R.id.textViewBMIResult);
-                TextView textViewBMICategory = findViewById(R.id.textViewBMICategory);
-
-// Set the text and color for the BMI value
-                textViewBMIResult.setText(bmiText);
-                textViewBMIResult.setTextColor(color);
-
-// Set the text for the BMI category label
-                textViewBMICategory.setText(category);
-
-
-            }
+            Intent bmiIntent = new Intent(this, ResultActivity.class);
+            bmiIntent.putExtra("weight", weight);
+            bmiIntent.putExtra("height", height);
+            startActivity(bmiIntent); // start the activity
 
 
         });
