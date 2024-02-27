@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">BMI</string>
+    <string name="calculate">Calculate</string>
+    <string name="weight_hint">Enter weight in Kg\'s</string>
+    <string name="height_hint">Enter weight in Cm\'s</string>
+
+    <!-- BMI categories -->
+    <string-array name="bmi_categories">
+        <item>Underweight</item>
+        <item>Normal weight</item>
+        <item>Overweight</item>
+        <item>Obesity</item>
+        <item>Class 3 Obesity</item>
+    </string-array>
+</resources>
