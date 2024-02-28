@@ -3,6 +3,7 @@ package net.mrmdi.pmp.bmi_kotlin
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -24,28 +25,35 @@ import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
 
 // builder
-import androidx.compose.material3.AlertDialog
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.launch
+import net.mrmdi.pmp.bmi_kotlin.ui.BMIViewModel
+import net.mrmdi.pmp.bmi_kotlin.ui.screens.InputScreen
+import net.mrmdi.pmp.bmi_kotlin.ui.screens.ResultScreen
 
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val viewModel: BMIViewModel by viewModels()
+
         setContent {
-            BMIKotlinTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    BMICalculator()
-                }
+            val navController = rememberNavController()
+            NavHost(navController = navController, startDestination = "inputScreen") {
+                composable("inputScreen") { InputScreen(navController, viewModel) }
+                composable("resultScreen") { ResultScreen(navController, viewModel) }
             }
         }
     }
 }
+
+
+
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
