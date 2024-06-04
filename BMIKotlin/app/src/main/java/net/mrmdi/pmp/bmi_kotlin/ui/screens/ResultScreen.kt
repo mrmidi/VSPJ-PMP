@@ -8,17 +8,16 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
+
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.layout
+
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import net.mrmdi.pmp.bmi_kotlin.ui.BMIViewModel
+import net.mrmdi.pmp.bmi_kotlin.viewmodel.BMIViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -60,7 +59,7 @@ fun ResultScreen(navController: NavHostController, viewModel: BMIViewModel) {
                     )
                     // Description Text
                     Text(
-                        text = viewModel.bmiDescription, // Placeholder, use actual category from ViewModel
+                        text = viewModel.bmiDescription,
                         style = MaterialTheme.typography.bodyLarge, // Medium-sized font for description
                         color = viewModel.bmiColor
                     )

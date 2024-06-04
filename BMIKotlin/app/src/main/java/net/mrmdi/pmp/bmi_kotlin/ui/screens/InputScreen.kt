@@ -30,7 +30,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.launch
-import net.mrmdi.pmp.bmi_kotlin.ui.BMIViewModel
+import net.mrmdi.pmp.bmi_kotlin.viewmodel.BMIViewModel
 
 @OptIn(ExperimentalComposeUiApi::class, ExperimentalMaterial3Api::class)
 @Composable

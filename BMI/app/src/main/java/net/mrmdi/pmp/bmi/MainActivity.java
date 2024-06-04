@@ -15,17 +15,6 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    /*
-    * BMI Calculator
-    * Height	Weight Range	BMI	Considered
-    * 5′ 9″	124 lbs or less	Below 18.5	Underweight
-    * 125 lbs to 168 lbs	18.5 to 24.9	Healthy weight
-    * 169 lbs to 202 lbs	25.0 to 29.9	Overweight
-    * 203 lbs or more	30 or higher	Obesity
-    * 271 lbs or more	40 or higher	Class 3 Obesity
-    * values from https://www.cdc.gov/obesity/basics/adult-defining.html
-     */
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
     }
+
 
 
 }

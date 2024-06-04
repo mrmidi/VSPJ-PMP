@@ -1,7 +1,6 @@
-package net.mrmdi.pmp.bmi_kotlin.ui
+package net.mrmdi.pmp.bmi_kotlin.viewmodel
 
 import androidx.compose.ui.graphics.Color
-import androidx.compose.runtime.livedata.*
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

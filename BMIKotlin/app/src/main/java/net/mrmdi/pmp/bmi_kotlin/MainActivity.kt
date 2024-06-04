@@ -32,7 +32,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.launch
-import net.mrmdi.pmp.bmi_kotlin.ui.BMIViewModel
+import net.mrmdi.pmp.bmi_kotlin.viewmodel.BMIViewModel
 import net.mrmdi.pmp.bmi_kotlin.ui.screens.InputScreen
 import net.mrmdi.pmp.bmi_kotlin.ui.screens.ResultScreen
 
